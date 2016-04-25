@@ -31,6 +31,7 @@ import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import ghPages from 'gulp-gh-pages';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
 
@@ -265,6 +266,7 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
   });
 });
 
-// Load custom tasks from the `tasks` directory
-// Run: `npm install --save-dev require-dir` from the command-line
-// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
+gulp.task('deploy', ['default'], () => {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages({ force: true }));
+});

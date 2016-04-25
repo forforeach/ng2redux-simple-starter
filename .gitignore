@@ -4,3 +4,5 @@ dist/
 app.yaml
 .vscode
 typings
+*.log
+.publish

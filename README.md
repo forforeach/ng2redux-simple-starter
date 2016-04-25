@@ -8,6 +8,10 @@
 
 2. Injection of [`Store`](https://github.com/forforeach/ng2redux#store) into a `component`. Since the store is injected, it is available in `component`'s scope and allows a user to subscribe to `state` changes and to dispatch actions.
 
+## Live example
+
+Live example can be found here: http://forforeach.github.io/ng2redux-simple-starter
+
 ## Quickstart
 
 Clone this repository and run:
